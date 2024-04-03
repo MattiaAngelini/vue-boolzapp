@@ -61,8 +61,7 @@ main {height: 100vh;}
 
 .sofia-img-container{
     display: flex;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .sofia-img {
@@ -73,7 +72,6 @@ main {height: 100vh;}
 .my-contact i {
     padding: 5px;
     color: #b1b1b1;
-    
 }
 
 /*** NOTIFICATIONS ***/
@@ -135,33 +133,38 @@ main {height: 100vh;}
 }
 
 /*** CONTACTS ***/
-.contact-container {
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-  
+
+.container-contacts {
+    background-color: white;
 }
 
-.border-container {
-    border: 1px solid black;
-    background-color: #dbdbd2;
+.section-contacts {
+    height: 60px;
+    display: flex; 
+    justify-content: space-between;
+    border: 1px solid rgb(228, 225, 225);
 }
-.contact-container figure{
+
+.section-contacts  figure{
     display: flex;
     border-radius: 100%;
     font-size: 22px;
 }
 
-.contact-container img {
+.section-contacts img {
     width: 60px;
     border-radius: 100%;
 }
 
-.contact-container h5 {
+.section-contacts h5 {
     padding: 10px;
 }
 
+.section-contacts span {
+    justify-content: flex-end;
+}
 
-
+.contact-card {
+    display: flex;
+}
 /*************RIGHT COL - COL-60 ***************/

@@ -67,20 +67,23 @@
                     </div>
 
                     <!--CONTACTS-->
-                    <div class="border-container" id="app">
+                    <div class="container-contacts" id="app">
 
                          <!--SINGLE CONTACT-->
-                         <div  v-for="(contact,index) in contacts" class="contact-container">                         
+                         <section  v-for="(contact,index) in contacts" class="section-contacts">                         
                             
-                            
-                            <div>
-                                <img src="" alt="">
-                                <h5>{{contact.name}}</h5>
+                            <div class="contact-card">
+                                <figure>
+                                    <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">              
+                                </figure>
+                                
+                                <div class="contact-name">
+                                    <h5>{{contact.name}}</h5>
+                                </div> 
                             </div>
-
-
+   
                             <span>12.00</span>                         
-                         </div>
+                        </section>
 
                     </div>
 
