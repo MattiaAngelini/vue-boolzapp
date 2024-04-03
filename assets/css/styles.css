@@ -6,11 +6,13 @@
     box-sizing: border-box;
 }
 
-/******BACKGROUND WRAP******/
-
 body {
     background-color: #dbdbd2;
 }
+
+main {height: 100vh;}
+
+/******BACKGROUND WRAP******/
 
 .wrap-bar {
     background-color:#009688;
@@ -18,8 +20,6 @@ body {
 }
 
 /******CONTAINER CHAT******/
-
-main {height: 100vh;}
 
 .main-chat { 
     display: flex;
@@ -46,3 +46,28 @@ main {height: 100vh;}
     background-color: blue;
 }
 
+/*************LEFT COL - COL-40 ***************/
+
+/*** PERSONAL CONTACT - SOFIA ***/
+.my-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #eaeaea;
+}
+
+.sofia-img-container{
+    display: flex;
+    align-items: center;
+}
+
+.sofia-img {
+    width: 50px;
+    border-radius: 100%;
+}
+
+.my-contact i {
+    padding: 10px;
+    color: #b1b1b1;
+}
