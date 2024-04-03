@@ -44,7 +44,7 @@ main {height: 100vh;}
 
 .col-60 {
     width: 60%;
-    background-color: blue;
+    background-image: url(/assets/img/mine.jpg);
 }
 
 /*************LEFT COL - COL-40 ***************/
@@ -80,12 +80,12 @@ main {height: 100vh;}
 
 .notifications {
     background-color:  #8edafc;
-    height: 80px;
+    height: 70px;
     display: flex;
     align-items: center;
 }
 
-.notifications figure {
+.notifications span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,3 +102,36 @@ main {height: 100vh;}
     color: grey;
     text-decoration: underline;
 }
+
+/*** SEARCHBAR ***/
+.searchbar-wrap {
+    background-color: #fafafa ;
+}
+
+.searchbar-container {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    color: grey;
+    
+}
+.searchbar-container span {
+    width: 20%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(228, 225, 225);
+}
+
+.searchbar-container input {
+    width: 100%;
+    height: 30px;
+    font-size: 10px;
+    border:1px solid rgb(228, 225, 225);
+    padding: 10px;
+}
+
+/*************RIGHT COL - COL-60 ***************/
