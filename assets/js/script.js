@@ -14,7 +14,3 @@
 
 
 
-
-let matti = 10;
-console.log(matti)
-

@@ -1,3 +1,48 @@
-body {
-    color: red;
+
+/***********GENERAL**********/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/******BACKGROUND WRAP******/
+
+body {
+    background-color: #dbdbd2;
+}
+
+.wrap-bar {
+    background-color:#009688;
+    height: 90px;
+}
+
+/******CONTAINER CHAT******/
+
+main {height: 100vh;}
+
+.main-chat { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;  
+    height: 90%;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    top: 5%;
+}
+
+.col-40 {
+    width: 40%;
+    background-color: red;  
+}
+
+.col-60 {
+    width: 60%;
+    background-color: blue;
+}
+
