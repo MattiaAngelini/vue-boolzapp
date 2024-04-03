@@ -134,4 +134,34 @@ main {height: 100vh;}
     padding: 10px;
 }
 
+/*** CONTACTS ***/
+.contact-container {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  
+}
+
+.border-container {
+    border: 1px solid black;
+    background-color: #dbdbd2;
+}
+.contact-container figure{
+    display: flex;
+    border-radius: 100%;
+    font-size: 22px;
+}
+
+.contact-container img {
+    width: 60px;
+    border-radius: 100%;
+}
+
+.contact-container h5 {
+    padding: 10px;
+}
+
+
+
 /*************RIGHT COL - COL-60 ***************/

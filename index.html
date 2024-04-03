@@ -67,7 +67,20 @@
                     </div>
 
                     <!--CONTACTS-->
-                    <div>
+                    <div class="border-container" id="app">
+
+                         <!--SINGLE CONTACT-->
+                         <div  v-for="(contact,index) in contacts" class="contact-container">                         
+                            
+                            
+                            <div>
+                                <img src="" alt="">
+                                <h5>{{contact.name}}</h5>
+                            </div>
+
+
+                            <span>12.00</span>                         
+                         </div>
 
                     </div>
 
