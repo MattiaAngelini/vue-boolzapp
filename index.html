@@ -80,6 +80,19 @@
                             <span>12.00</span>                         
                         </section>
 
+                        <section  v-for="(contact,index) in contacts" class="section-contacts">                                               
+                            <div class="contact-card">
+                                <figure>
+                                    <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">              
+                                </figure>
+                                
+                                <div class="contact-name">
+                                    <h5>{{contact.name}}</h5>
+                                </div> 
+                            </div>
+                            <span>12.00</span>                         
+                        </section>
+
                     </div>
 
                 </div>
@@ -88,7 +101,7 @@
                 <div class="col-60">
                     
                     <!--ACTIVE CONTACT ON CHAT-->
-                    <section class="active-contact-chat">
+                    <section >
                         <figure>
                             <img class="user-img" src="./assets/img/avatar_io.jpg" alt="">
                         </figure>
@@ -102,103 +115,37 @@
                    <!--CHAT-->
                    <section class="chat-area">
 
-                                                  
-                        <!-- <div class="row">
-                            <div class="badge send">
-                                <span>messaggio inviato</span>
-                            </div>
-                        </div>
-                        
-
-                        
-                                             
-                        <div class="row">
-                            <div class="badge received">
-                                <span>messaggio ricevuto</span>
-                            </div>
-                        </div> -->
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
-
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda est dicta non consequuntur nisi quis rem optio soluta, quam expedita exercitationem facere odio numquam sint sequi id maiores eius omnis?
+                          
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ad, iure repudiandae at qui placeat fugit ipsa adipisci laudantium, nihil illum doloribus sapiente, iusto tempora molestias sed quo! Delectus, cum.
 
               
                    </section>
