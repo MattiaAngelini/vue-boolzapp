@@ -19,7 +19,7 @@ main {height: 100vh;}
     height: 90px;
 }
 
-/******CONTAINER CHAT******/
+/******LAYOUT******/
 
 .main-chat { 
     display: flex;
@@ -35,6 +35,8 @@ main {height: 100vh;}
     position: absolute;
     top: 5%;
 }
+
+.col-50 {width: 50%;}
 
 .col-40 {
     width: 40%;
@@ -74,7 +76,7 @@ main {height: 100vh;}
     color: #b1b1b1;
 }
 
-/*** NOTIFICATIONS ***/
+/*** ROW NOTIFICATIONS ***/
 
 .notifications {
     background-color:  #8edafc;
@@ -101,7 +103,7 @@ main {height: 100vh;}
     text-decoration: underline;
 }
 
-/*** SEARCHBAR ***/
+/*** ROW SEARCHBAR ***/
 .searchbar-wrap {
     background-color: #fafafa ;
 }
@@ -132,7 +134,7 @@ main {height: 100vh;}
     padding: 10px;
 }
 
-/*** CONTACTS ***/
+/*** DINAMIC CONTACTS ***/
 
 .container-contacts {
     background-color: white;
@@ -173,20 +175,40 @@ main {height: 100vh;}
 .col-60 {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    position: relative;
+    overflow-y: auto;
 }
 
-.col-60 section {
+.active-contact-chat {
+    height: 200px;
+}
+
+.col-60 > section:nth-child(1),
+.col-60 > section:nth-child(3)  {
     display: flex;
     background-color: #eaeaea;
     height: 60px;
     align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.col-60 > section:nth-child(3) {  
+    bottom: 0;
+    padding: 6px;
+
 }
 
 .last-access {
     color: #918c8c;
 }
 
+/***WRAP CHAT***/
+
+/***ROW TEXTBAR CHAT***/
+.section-fixed {
+    height: 60px;
+}
 .textbar-container {
     width: 100%;
     height: 40px;
@@ -209,4 +231,35 @@ main {height: 100vh;}
     height: 36px;
     border: none;
     padding: 6px;
+}
+
+/***DINAMIC CHAT**/
+.chat-area {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.badge{ 
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+    width: 40%; 
+}
+
+.send {
+    justify-content: start;
+}
+
+.received {
+    background-color:#d5f9ba;
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+   
+}
+
+.row-chat {
+    height: 100%;
 }
