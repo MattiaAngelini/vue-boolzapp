@@ -23,7 +23,7 @@ createApp({
                     status: 'received'
                   }
                 ],
-              },
+              },  
               {
                 name: 'Fabio',
                 avatar: '_2',

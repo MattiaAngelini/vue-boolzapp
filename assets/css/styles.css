@@ -38,7 +38,7 @@ main {height: 100vh;}
 
 .col-40 {
     width: 40%;
-    background-color: red;  
+    background-color: white;
     overflow-y: auto;
 }
 
@@ -59,12 +59,12 @@ main {height: 100vh;}
     height: 60px;
 }
 
-.sofia-img-container{
+.user-img-container{
     display: flex;
     align-items: center;  
 }
 
-.sofia-img {
+.user-img {
     width: 50px;
     border-radius: 100%;
 }
@@ -162,9 +162,51 @@ main {height: 100vh;}
 
 .section-contacts span {
     justify-content: flex-end;
+    padding: 10px;
 }
 
 .contact-card {
     display: flex;
 }
 /*************RIGHT COL - COL-60 ***************/
+
+.col-60 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.col-60 section {
+    display: flex;
+    background-color: #eaeaea;
+    height: 60px;
+    align-items: center;
+}
+
+.last-access {
+    color: #918c8c;
+}
+
+.textbar-container {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    color: grey;
+}
+
+.textbar-container span {
+    width: 10%;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textbar-container input {
+    width: 90%;
+    height: 36px;
+    border: none;
+    padding: 6px;
+}

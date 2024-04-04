@@ -26,8 +26,8 @@
                     <!--MY CONTACT-->
                     <div class="my-contact">
                        
-                        <span class="sofia-img-container">
-                            <img class="sofia-img" src="./assets/img/avatar_io.jpg" alt="">
+                        <span class="user-img-container">
+                            <img class="user-img" src="./assets/img/avatar_io.jpg" alt="">
                             <div>Sofia</div>
                         </span>
 
@@ -54,13 +54,10 @@
 
                     <!--SEARCHBAR CHAT-->
                     <div class="searchbar-wrap">
-
-                        <div class="searchbar-container">
-                       
+                        <div class="searchbar-container">                      
                             <span>
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </span>
-
                             <input placeholder="Cerca o inizia una nuova chat" type="text">
                         </div>
 
@@ -70,8 +67,7 @@
                     <div class="container-contacts" id="app">
 
                          <!--SINGLE CONTACT-->
-                         <section  v-for="(contact,index) in contacts" class="section-contacts">                         
-                            
+                         <section  v-for="(contact,index) in contacts" class="section-contacts">                                               
                             <div class="contact-card">
                                 <figure>
                                     <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">              
@@ -81,7 +77,6 @@
                                     <h5>{{contact.name}}</h5>
                                 </div> 
                             </div>
-   
                             <span>12.00</span>                         
                         </section>
 
@@ -91,6 +86,28 @@
 
                 <!--RIGHT COL - CHAT-->
                 <div class="col-60">
+                    
+                    <!--ACTIVE CONTACT ON CHAT-->
+                    <section class="active-contact-chat">
+                        <figure>
+                            <img class="user-img" src="./assets/img/avatar_io.jpg" alt="">
+                        </figure>
+                        <div>
+                            <p>CONTATTO ATTIVO</p>
+                            <p class="last-access">ultimo accesso oggi alle 12:00</p>  
+                        </div>           
+                   </section>
+
+                   <!--TEXTBAR CHAT-->
+                   <section>
+                        <div class="textbar-container">              
+                            <span>
+                                <i class="far fa-smile"></i>
+                            </span>
+                            <input placeholder="Scrivi un messaggio" type="text">
+                        </div>    
+                   </section>
+
                 </div>
 
             </div>
