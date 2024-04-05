@@ -228,38 +228,28 @@ body {
 /***DINAMIC CHAT**/
 
 .chat-area {    
-    width: 100%;
+    margin: auto;
+    width: 80%;
     height: 100%;
     overflow-y: auto;
     margin-top: 30px;
-}
-
-.badge {
-    background-color: white;
-    border-radius: 4px;
-    padding: 10px;
-}
-
-.container-send {
-    padding: 6px;
     display: flex;
-    justify-content: start;
-    margin-left: 5%;
+    flex-direction: column;
+}
+
+.container-sent {
+    width: 150px;
+    margin: 6px;
+    padding: 6px;
+    background-color: white;
+    
 }
 
 .container-received {
-    padding: 6px;
-    display: flex;
-    justify-content: end;
-    margin-right: 5%;
-}
-
-.send {
-    justify-content: start;
-}
-
-.received {
     background-color: #d5f9ba;
-    
+    width: 200px;
+    margin: 6px;
+    padding: 6px;
+    align-self: flex-end;
 }
 

@@ -15,6 +15,8 @@
 
    <main>
 
+    <div id="app">
+
         <div class="wrap-bar"></div>
         
         <section class="main-chat">
@@ -64,10 +66,10 @@
                     </div>
 
                     <!--CONTACTS-->
-                    <div class="container-contacts" id="app">
+                    <div class="container-contacts">
 
                          <!--SINGLE CONTACT-->
-                         <section  v-for="(contact,index) in contacts" class="section-contacts">                                               
+                         <section  @click="accountActive(index)"  v-for="(contact,index) in contacts" class="section-contacts">                                               
                             <div class="contact-card">
                                 <figure>
                                     <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">              
@@ -94,22 +96,20 @@
                             <img class="user-img" src="./assets/img/avatar_io.jpg" alt="">
                         </figure>
                         <div>
-                            <p>CONTATTO ATTIVO</p>
+                            <p>{{}}</p>
                             <p class="last-access">ultimo accesso oggi alle 12:00</p>  
                         </div>           
                    </section>
                     
+
                    <!--CHAT-->
                    <section class="chat-area">
 
-                        <div class="container-send">
-                            <span class="badge send">inviato</span>
+                        <div v-for="message in contacts[userActive].messages" :class="{ 'container-sent': message.status === 'sent', 'container-received': message.status === 'received' }">
+                            <span>{{ message.message }}</span>                      
                         </div>
 
-                        <div class="container-received">
-                            <span class="badge received">ricevuto</span>
-                        </div>
-                    
+        
                    </section>
 
 
@@ -130,6 +130,8 @@
 
             </div>
        </section>
+
+    </div>
 
    </main>
     
