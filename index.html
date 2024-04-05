@@ -90,40 +90,41 @@
                 <!--RIGHT COL - CHAT-->
                 <div class="col-60">
                     
-                    <!--ACTIVE CONTACT ON CHAT-->
-                    <section >
+                  <!--ACTIVE CONTACT ON CHAT-->
+
+                    <section>
                         <figure>
-                            <img class="user-img" src="./assets/img/avatar_io.jpg" alt="">
+                            <img class="user-img" :src="'./assets/img/avatar' + contacts[userActive].avatar + '.jpg'" alt="">
                         </figure>
+                        
                         <div>
-                            <p>{{}}</p>
+                            <p>{{ contacts[userActive].name }}</p>
                             <p class="last-access">ultimo accesso oggi alle 12:00</p>  
-                        </div>           
-                   </section>
-                    
-
-                   <!--CHAT-->
-                   <section class="chat-area">
-
-                        <div class="message" v-for="message, date in contacts[userActive].messages" :class="{ 'container-sent': message.status === 'sent', 'container-received': message.status === 'received' }">
-                            <span>{{ message.message }}</span>     
-                            <span class="date-message">{{ message.date }}</span>                 
                         </div>
+                    </section>
+                    <!--CHAT-->
+                    
+                    <section class="chat-area">
 
-        
-                   </section>
+                            <div class="message" v-for="message, date in contacts[userActive].messages" :class="{ 'container-sent': message.status === 'sent', 'container-received': message.status === 'received' }">
+                                <span>{{ message.message }}</span>     
+                                <span class="date-message">{{ message.date }}</span>                 
+                            </div>
+
+            
+                    </section>
 
 
-                   <!--TEXTBAR CHAT-->
-                   <section>
+                    <!--TEXTBAR CHAT-->
+                    <section>
 
-                        <div class="textbar-container">              
-                            <span>
-                                <i class="far fa-smile"></i>
-                            </span>
-                            <input placeholder="Scrivi un messaggio" type="text">
-                        </div>    
-                   
+                            <div class="textbar-container">              
+                                <span>
+                                    <i class="far fa-smile"></i>
+                                </span>
+                                <input placeholder="Scrivi un messaggio" type="text">
+                            </div>    
+                    
                     </section>
                 
 
