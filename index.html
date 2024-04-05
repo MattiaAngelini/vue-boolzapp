@@ -1,143 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--CSS-->
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <!--FONT AWESOME-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- VUE SCRIPT-->
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- VUE SCRIPT -->
     <script src="https://unpkg.com/vue@3"></script>
 </head>
+
 <body>
 
-   <main>
+    <main>
 
-    <div id="app">
+        <div id="app">
 
-        <div class="wrap-bar"></div>
-        
-        <section class="main-chat">
-            <div class="container">
-                
-                <!--LEFT COL - CONTACTS GROUP-->
-                <div class="col-40">
-                    
-                    <!--MY CONTACT-->
-                    <div class="my-contact">
-                       
-                        <span class="user-img-container">
-                            <img class="user-img" src="./assets/img/avatar_io.jpg" alt="">
-                            <div>Sofia</div>
-                        </span>
+            <div class="wrap-bar"></div>
 
-                        <div>
-                            <i class="fa-solid fa-circle-notch"></i>
-                            <i class="fa-solid fa-message"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </div>
+            <section class="main-chat">
+                <div class="container">
 
-                    </div>
-                    
-                    <!--NOTIFICATIONS-->
-                    <div class="notifications">
-                        <span>
-                            <i class="fa-solid fa-bell-slash"></i> 
-                        </span>
+                    <!-- LEFT COL - CONTACTS GROUP -->
+                    <div class="col-40">
 
-                        <div>
-                            <p>Ricevi notifiche di nuovi messaggi</p>
-                            <p>Attiva notifiche desktop</p>
-                        </div>
-                    </div>
-                    
-
-                    <!--SEARCHBAR CHAT-->
-                    <div class="searchbar-wrap">
-                        <div class="searchbar-container">                      
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                        <!-- MY CONTACT -->
+                        <div class="my-contact">
+                            <span class="user-img-container">
+                                <img class="user-img" src="./assets/img/avatar_io.jpg" alt="">
+                                <div>Sofia</div>
                             </span>
-                            <input placeholder="Cerca o inizia una nuova chat" type="text">
+
+                            <div>
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+
+                        <!-- NOTIFICATIONS -->
+                        <div class="notifications">
+                            <span>
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </span>
+                            <div>
+                                <p>Ricevi notifiche di nuovi messaggi</p>
+                                <p>Attiva notifiche desktop</p>
+                            </div>
+                        </div>
+
+
+                        <!-- SEARCHBAR CHAT -->
+                        <div class="searchbar-wrap">
+                            <div class="searchbar-container">
+                                <span>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                                <input placeholder="Cerca o inizia una nuova chat" type="text">
+                            </div>
+                        </div>
+
+                        <!-- CONTACTS -->
+                        <div class="container-contacts">
+
+                            <!-- SINGLE CONTACT -->
+                            <section @click="accountActive(index)" v-for="(contact,index) in contacts"
+                                class="section-contacts">
+                                <div class="contact-card">
+                                    <figure>
+                                        <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">
+                                    </figure>
+
+                                    <div class="contact-name">
+                                        <h5>{{contact.name}}</h5>
+                                    </div>
+                                </div>
+                                <span>12.00</span>
+                            </section>
+
                         </div>
 
                     </div>
 
-                    <!--CONTACTS-->
-                    <div class="container-contacts">
+                    <!-- RIGHT COL - CHAT -->
+                    <div class="col-60">
 
-                         <!--SINGLE CONTACT-->
-                         <section  @click="accountActive(index)"  v-for="(contact,index) in contacts" class="section-contacts">                                               
-                            <div class="contact-card">
-                                <figure>
-                                    <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">              
-                                </figure>
-                                
-                                <div class="contact-name">
-                                    <h5>{{contact.name}}</h5>
-                                </div> 
+                        <!-- ACTIVE CONTACT ON CHAT -->
+                        <section>
+                            <figure>
+                                <img class="user-img" :src="'./assets/img/avatar' + contacts[userActive].avatar + '.jpg'"
+                                    alt="">
+                            </figure>
+
+                            <div>
+                                <p>{{ contacts[userActive].name }}</p>
+                                <p class="last-access">ultimo accesso oggi alle 12:00</p>
                             </div>
-                            <span>12.00</span>   
-                                                  
+                        </section>
+                        <!-- CHAT -->
+
+                        <section class="chat-area">
+                            <div class="message" v-for="(message, date) in contacts[userActive].messages"
+                                :class="{ 'container-sent': message.status === 'sent', 'container-received': message.status === 'received' }">
+                                <span>{{ message.message }}</span>
+                                <span class="date-message">{{ message.date }}</span>
+                            </div>
                         </section>
 
-                    </div>
 
-                </div>
-
-                <!--RIGHT COL - CHAT-->
-                <div class="col-60">
-                    
-                  <!--ACTIVE CONTACT ON CHAT-->
-
-                    <section>
-                        <figure>
-                            <img class="user-img" :src="'./assets/img/avatar' + contacts[userActive].avatar + '.jpg'" alt="">
-                        </figure>
-                        
-                        <div>
-                            <p>{{ contacts[userActive].name }}</p>
-                            <p class="last-access">ultimo accesso oggi alle 12:00</p>  
-                        </div>
-                    </section>
-                    <!--CHAT-->
-                    
-                    <section class="chat-area">
-
-                            <div class="message" v-for="message, date in contacts[userActive].messages" :class="{ 'container-sent': message.status === 'sent', 'container-received': message.status === 'received' }">
-                                <span>{{ message.message }}</span>     
-                                <span class="date-message">{{ message.date }}</span>                 
-                            </div>
-
-            
-                    </section>
-
-
-                    <!--TEXTBAR CHAT-->
-                    <section>
-
-                            <div class="textbar-container">              
+                        <!-- TEXTBAR CHAT -->
+                        <section>
+                            <div class="textbar-container">
                                 <span>
                                     <i class="far fa-smile"></i>
                                 </span>
-                                <input @keyup.enter="sendMessage" v-model="userMessageValue" placeholder="Scrivi un messaggio" type="text">
-                            </div>    
-                    
-                    </section>
-                
+                                <input @keyup.enter="sendMessage" v-model="userMessageValue"
+                                    placeholder="Scrivi un messaggio" type="text">
+                            </div>
+                        </section>
+                    </div>
 
                 </div>
+            </section>
 
-            </div>
-       </section>
+        </div>
 
-    </div>
+    </main>
 
-   </main>
-    
-    <!--MY SCRIPT-->
+    <!-- MY SCRIPT -->
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
+
 </html>
