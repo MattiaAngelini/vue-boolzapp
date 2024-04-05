@@ -122,7 +122,7 @@
                                 <span>
                                     <i class="far fa-smile"></i>
                                 </span>
-                                <input placeholder="Scrivi un messaggio" type="text">
+                                <input @keyup.enter="sendMessage" v-model="userMessageValue" placeholder="Scrivi un messaggio" type="text">
                             </div>    
                     
                     </section>

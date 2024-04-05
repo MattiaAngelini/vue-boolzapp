@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
           userActive: 0,
+          userMessageValue: '',
             contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -92,14 +93,41 @@ createApp({
 			this.userActive = index;
       console.log(this.userActive)
 		},
+    sendMessage() {
+      // Aggiungiamo il messaggio solo se è stato digitato qualcosa, 
+      //quindi diverso da nulla
+     
+      if (this.userMessageValue !== '') {
+          //creo costante per nuovo messaggio inserito 
+          //che conterrà data corrente, valore inserito nella input,
+          //e status sent per attribuzione classe
+        const newMessage = {
+              date: new Date().toLocaleString(),
+              message: this.userMessageValue,
+              status: 'sent'
+          };
+          // Aggiungiamo il nuovo messaggio alla lista dei messaggi del contatto attivo
+          this.contacts[this.userActive].messages.push(newMessage);
+          // Reset della barra di input dopo l'invio del messaggio
+          this.userMessageValue = '';
+          
+      }
+  },
+
+
+
     }
 }).mount('#app');
 
+// Milestone 3
+// - Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa
+//  e digitando “enter” il testo viene aggiunto al thread sopra, 
+//  come messaggio verde
 
-// Milestone 2
-// - Visualizzazione dinamica dei messaggi: 
-// tramite la direttiva v-for,
-//  visualizzare tutti i messaggi relativi al contatto attivo
-//   all’interno del pannello della conversazione
-// - Click sul contatto mostra la conversazione
-//  del contatto cliccato
+//  - Risposta dall’interlocutore: ad ogni inserimento di un messaggio,
+//   l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+
+//   Milestone 4
+// - Ricerca utenti: scrivendo qualcosa nell’input a sinistra,
+//  vengono visualizzati solo i contatti il cui nome contiene le lettere inserite 
+// (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
