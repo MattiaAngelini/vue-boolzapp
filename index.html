@@ -105,8 +105,9 @@
                    <!--CHAT-->
                    <section class="chat-area">
 
-                        <div v-for="message in contacts[userActive].messages" :class="{ 'container-sent': message.status === 'sent', 'container-received': message.status === 'received' }">
-                            <span>{{ message.message }}</span>                      
+                        <div class="message" v-for="message, date in contacts[userActive].messages" :class="{ 'container-sent': message.status === 'sent', 'container-received': message.status === 'received' }">
+                            <span>{{ message.message }}</span>     
+                            <span class="date-message">{{ message.date }}</span>                 
                         </div>
 
         

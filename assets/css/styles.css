@@ -225,7 +225,7 @@ body {
     padding: 6px;
 }
 
-/***DINAMIC CHAT**/
+/***AREA CHAT**/
 
 .chat-area {    
     margin: auto;
@@ -237,11 +237,24 @@ body {
     flex-direction: column;
 }
 
+.message {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-message {
+    align-self: flex-end;
+    color: grey;
+    font-size: 10px;
+}
+
+/**DINAMIC CLASS - MESSAGES**/
 .container-sent {
     width: 150px;
     margin: 6px;
     padding: 6px;
     background-color: white;
+    line-height: 20px;
     
 }
 
@@ -250,6 +263,7 @@ body {
     width: 200px;
     margin: 6px;
     padding: 6px;
+    line-height: 20px;
     align-self: flex-end;
 }
 
