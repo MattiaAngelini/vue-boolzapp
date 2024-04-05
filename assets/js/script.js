@@ -96,7 +96,6 @@ createApp({
     sendMessage() {
       // Aggiungiamo il messaggio solo se è stato digitato qualcosa, 
       //quindi diverso da nulla
-     
       if (this.userMessageValue !== '') {
           //creo costante per nuovo messaggio inserito 
           //che conterrà data corrente, valore inserito nella input,
@@ -106,15 +105,28 @@ createApp({
               message: this.userMessageValue,
               status: 'sent'
           };
-          // Aggiungiamo il nuovo messaggio alla lista dei messaggi del contatto attivo
-          this.contacts[this.userActive].messages.push(newMessage);
+              // Aggiungiamo il nuovo messaggio alla lista dei messaggi del contatto attivo
+              this.contacts[this.userActive].messages.push(newMessage);
+                 
+          //Dopo aver inviato messaggio, nella stessa funzione 3 secondi dopo,
+          //faccio comparrire messaggio di risposta con 'ok'
+          setTimeout(() => {
+            const replyMessage = {
+              date: new Date().toLocaleString(),
+              message: 'ok',
+              status: 'received'
+            };
+             // Aggiungiamo risposta alla lista dei messaggi del contatto attivo
+             this.contacts[this.userActive].messages.push(replyMessage);
+
+          //3 secondi di intervallo
+          },3000);
+       
           // Reset della barra di input dopo l'invio del messaggio
           this.userMessageValue = '';
           
       }
   },
-
-
 
     }
 }).mount('#app');
