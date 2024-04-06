@@ -1,12 +1,16 @@
-const { createApp } = Vue;
+const dt = luxon.DateTime;
+const currentHour = dt.now().toLocaleString(dt.DATETIME_SHORT);  
 
+const { createApp } = Vue;
 createApp({
   data() {
     return {
+      newMessage:'',
       userActive: 0,
       userMessageValue: '',
       userSearchValue:'',
       dropdownVisible: false,
+      hour: currentHour,
       
       contacts: [{
           name: 'Michele',
@@ -102,7 +106,7 @@ createApp({
         // Creo costante per nuovo messaggio inserito 
         // che conterrà data corrente, valore inserito nella input,
         // e status sent per attribuzione classe
-        const newMessage = {
+        let newMessage = {
           date: new Date().toLocaleString(),
           message: this.userMessageValue,
           status: 'sent'
@@ -154,5 +158,7 @@ createApp({
     deleteMessage(messageIndex){
       this.contacts[this.userActive].messages.splice(messageIndex,1)
     },
+
+    
   }
 }).mount('#app');
