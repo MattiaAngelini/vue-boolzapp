@@ -232,12 +232,14 @@ body {
     flex-direction: column;
     border-radius: 6px;
     padding: 10px;
+    position: relative;
 }
 
 .date-message {
     align-self: flex-end;
     color: grey;
     font-size: 10px;
+    margin: 0 4px 0 4px;
 }
 
 /**DINAMIC CLASS - MESSAGES**/
@@ -258,4 +260,4 @@ body {
     position: relative;
 }
 
-/**DROPDOWN**/
+

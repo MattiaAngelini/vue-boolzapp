@@ -6,6 +6,7 @@ createApp({
       userActive: 0,
       userMessageValue: '',
       userSearchValue:'',
+      dropdownVisible: false,
       
      
       contacts: [{
@@ -145,17 +146,14 @@ createApp({
 				contact.visible = filteredName.includes(this.userSearchValue);
 			})
 		},
-    
+
     // Milestone 5
     // - Cancella messaggio: cliccando sul messaggio 
     // appare un menu a tendina che permette di cancellare il messaggio selezionato
+    
     // - Visualizzazione ora e ultimo messaggio inviato/ricevuto 
     // nella lista dei contatti
 
-    deleteMessage(){
-
-
-
-    }
+    
   }
 }).mount('#app');
