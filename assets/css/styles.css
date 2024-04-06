@@ -178,6 +178,10 @@ body {
     display: flex;
 }
 
+.selected {
+    background-color: #e9ebeb;
+}
+
 /*************RIGHT COL - COL-60 ***************/
 
 
@@ -230,9 +234,9 @@ body {
 /***AREA CHAT**/
 
 .chat-area {    
-    margin: auto;
-    width: 80%;
+    
     height: 100%;
+    padding: 0 40px 0 40px;
     overflow-y: auto;
     margin-top: 30px;
     display: flex;
@@ -242,6 +246,8 @@ body {
 .message {
     display: flex;
     flex-direction: column;
+    border-radius: 6px;
+    padding: 10px;
 }
 
 .date-message {
@@ -251,20 +257,18 @@ body {
 }
 
 /**DINAMIC CLASS - MESSAGES**/
-.container-sent {
-    width: 150px;
-    margin: 6px;
-    padding: 6px;
+.container-received {
+    width: 200px;
+    margin: 6px; 
     background-color: white;
     line-height: 20px;
     
 }
 
-.container-received {
+.container-sent{
     background-color: #d5f9ba;
     width: 200px;
     margin: 6px;
-    padding: 6px;
     line-height: 20px;
     align-self: flex-end;
 }

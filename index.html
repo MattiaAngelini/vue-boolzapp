@@ -72,7 +72,7 @@
 
                                 <!-- SINGLE CONTACT -->
                                 <section @click="accountActive(index)" 
-                                    class="section-contacts">
+                                    class="section-contacts" :class="{ 'selected': index === userActive }">
                                     
                                     <div>
                                         <div v-if="contact.visible"   class="contact-card">
