@@ -101,7 +101,7 @@
                         <!-- CHAT -->
                         <section class="chat-area">
 
-                            <div class="message" v-for="(message, date, index) in contacts[userActive].messages"
+                            <div class="message" v-for="(message, index) in contacts[userActive].messages"
                                 :class="{ 'container-sent': message.status === 'sent', 'container-received': message.status === 'received' }" >
                                 <span>{{ message.message }}</span>
                                                      
@@ -113,7 +113,7 @@
                                     </i>
                                     <ul class="dropdown-menu">
                                       <li><a class="dropdown-item" href="#">Message info</a></li>
-                                      <li @click="deleteMessage()"><a class="dropdown-item" href="#">Delete Message</a></li>
+                                      <li @click="deleteMessage(index)"><a class="dropdown-item" href="#">Delete Message</a></li>
                                     </ul>
                                   </div>
         

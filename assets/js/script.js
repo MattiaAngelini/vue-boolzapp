@@ -8,7 +8,6 @@ createApp({
       userSearchValue:'',
       dropdownVisible: false,
       
-     
       contacts: [{
           name: 'Michele',
           avatar: '_1',
@@ -130,7 +129,6 @@ createApp({
       }
     },
 
-
     //Dopo aver creato keyup e collegato v-model alla input,
     //creo una funzione per filtrare il valore inserito dall'user,
     //il cui nome contiene le lettere inserite
@@ -153,11 +151,8 @@ createApp({
     // - Visualizzazione ora e ultimo messaggio inviato/ricevuto 
     // nella lista dei contatti
 
-    deleteMessage(){
-      indexMessage = this.contacts.messages;
-
-      this.contacts[this.userActive].messages.splice(indexMessage,1)
-
+    deleteMessage(messageIndex){
+      this.contacts[this.userActive].messages.splice(messageIndex,1)
     },
   }
 }).mount('#app');
