@@ -137,15 +137,14 @@ createApp({
    
     filterSearch(){
       //for each per iterare tra tutti i nomi
-			this.contacts.forEach((contact) => {
-        
+			this.contacts.forEach((contact) => {  
         //creo variabile che contiene solo il nome iterato
 				filteredName = contact.name.toLowerCase();
-
         //cambio valore di visible con includes (che restituisce true o false)
 				contact.visible = filteredName.includes(this.userSearchValue);
-			})
+			})      
 		},
+   
 
     // Milestone 5
     // - Cancella messaggio: cliccando sul messaggio 
@@ -154,6 +153,11 @@ createApp({
     // - Visualizzazione ora e ultimo messaggio inviato/ricevuto 
     // nella lista dei contatti
 
-    
+    deleteMessage(){
+      indexMessage = this.contacts.messages;
+
+      this.contacts[this.userActive].messages.splice(indexMessage,1)
+
+    },
   }
 }).mount('#app');
