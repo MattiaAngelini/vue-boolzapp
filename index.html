@@ -67,23 +67,28 @@
                         </div>
 
                         <!-- CONTACTS -->
-                        <div class="container-contacts">
+                        <div  v-for="(contact,index) in contacts">
+                            <div class="container-contacts ">
 
-                            <!-- SINGLE CONTACT -->
-                            <section @click="accountActive(index)" v-for="(contact,index) in contacts"
-                                class="section-contacts">
-                                <div v-if="contact.visible" class="contact-card">
-                                    <figure>
-                                        <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">
-                                    </figure>
+                                <!-- SINGLE CONTACT -->
+                                <section @click="accountActive(index)" 
+                                    class="section-contacts">
+                                    
+                                    <div>
+                                        <div v-if="contact.visible"   class="contact-card">
+                                            <figure>
+                                                <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">
+                                            </figure>
 
-                                    <div class="contact-name">
-                                        <h5>{{contact.name}}</h5>
+                                            <div class="contact-name">
+                                                <h5>{{contact.name}}</h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                            </section>
+                                    
+                                </section>
 
+                            </div>
                         </div>
 
                     </div>
