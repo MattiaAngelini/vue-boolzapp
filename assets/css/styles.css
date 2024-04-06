@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 
 body {
@@ -85,7 +86,6 @@ body {
     align-items: center;
     font-size: 12px;
     padding: 6px;
-    
 }
 
 .notifications span {
@@ -142,16 +142,7 @@ body {
 .container-contacts {
     background-color: white;
     overflow-y: auto;
-    height: calc(100% - 170px);
-}
-
-.section-contacts {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid rgb(228, 225, 225);
-    overflow-y: auto;
+    height: calc(100% - 180px)
 }
 
 .section-contacts figure {
@@ -169,11 +160,6 @@ body {
     padding: 10px;
 }
 
-.section-contacts span {
-    justify-content: flex-end;
-    padding: 10px;
-}
-
 .contact-card {
     display: flex;
 }
@@ -183,7 +169,6 @@ body {
 }
 
 /*************RIGHT COL - COL-60 ***************/
-
 
 .col-60 > section:nth-child(1),
 .col-60 > section:nth-child(3) {
@@ -234,10 +219,9 @@ body {
 /***AREA CHAT**/
 
 .chat-area {    
-    
     height: 100%;
     padding: 0 40px 0 40px;
-    overflow-y: auto;
+    overflow-x: auto;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
@@ -262,14 +246,16 @@ body {
     margin: 6px; 
     background-color: white;
     line-height: 20px;
-    
+    position: relative;    
 }
 
-.container-sent{
+.container-sent {
     background-color: #d5f9ba;
     width: 200px;
     margin: 6px;
     line-height: 20px;
     align-self: flex-end;
+    position: relative;
 }
 
+/**DROPDOWN**/

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,35 +13,29 @@
     <!-- VUE SCRIPT -->
     <script src="https://unpkg.com/vue@3"></script>
 </head>
-
 <body>
-
     <main>
-
+        
         <div id="app">
-
             <div class="wrap-bar"></div>
-
             <section class="main-chat">
                 <div class="container">
-
-                    <!-- LEFT COL - CONTACTS GROUP -->
+                   
+                    <!-------------- LEFT COL - CONTACTS GROUP ------------->
                     <div class="col-40">
-
                         <!-- MY CONTACT -->
                         <div class="my-contact">
                             <span class="user-img-container">
                                 <img class="user-img" src="./assets/img/avatar_io.jpg" alt="">
                                 <div>Sofia</div>
                             </span>
-
                             <div>
                                 <i class="fa-solid fa-circle-notch"></i>
                                 <i class="fa-solid fa-message"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-
+                       
                         <!-- NOTIFICATIONS -->
                         <div class="notifications">
                             <span>
@@ -53,8 +46,7 @@
                                 <p>Attiva notifiche desktop</p>
                             </div>
                         </div>
-
-
+                       
                         <!-- SEARCHBAR CHAT -->
                         <div class="searchbar-wrap">
                             <div class="searchbar-container">
@@ -65,59 +57,55 @@
                                 placeholder="Cerca o inizia una nuova chat" type="text">
                             </div>
                         </div>
-
+                        
                         <!-- CONTACTS -->
-                        <div  v-for="(contact,index) in contacts">
-                            <div class="container-contacts ">
-
+                        <section class="container-contacts " >
+                            <div  v-for="(contact,index) in contacts">
+                               
                                 <!-- SINGLE CONTACT -->
-                                <section @click="accountActive(index)" 
-                                    class="section-contacts" :class="{ 'selected': index === userActive }">
-                                    
-                                    <div>
-                                        <div v-if="contact.visible"   class="contact-card">
-                                            <figure>
-                                                <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">
-                                            </figure>
-
-                                            <div class="contact-name">
-                                                <h5>{{contact.name}}</h5>
-                                            </div>
+                                <section @click="accountActive(index)" class="section-contacts" :class="{ 'selected': index === userActive }">
+                                    <div v-if="contact.visible" class="contact-card">
+                                        
+                                        <figure>
+                                            <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">
+                                       
+                                        </figure>
+                                       
+                                        <div class="contact-name">
+                                            <h5>{{contact.name}}</h5>
                                         </div>
+
                                     </div>
-                                    
                                 </section>
-
                             </div>
-                        </div>
-
+                        </section>
                     </div>
-
-                    <!-- RIGHT COL - CHAT -->
+                    
+                    
+                    <!---------------- RIGHT COL - CHAT --------------->
                     <div class="col-60">
-
                         <!-- ACTIVE CONTACT ON CHAT -->
                         <section>
                             <figure>
                                 <img class="user-img" :src="'./assets/img/avatar' + contacts[userActive].avatar + '.jpg'"
                                     alt="">
                             </figure>
-
                             <div>
                                 <p>{{ contacts[userActive].name }}</p>
                                 <p class="last-access">ultimo accesso oggi alle 12:00</p>
                             </div>
                         </section>
-                        <!-- CHAT -->
 
+                        <!-- CHAT -->
                         <section class="chat-area">
                             <div class="message" v-for="(message, date) in contacts[userActive].messages"
                                 :class="{ 'container-sent': message.status === 'sent', 'container-received': message.status === 'received' }">
                                 <span>{{ message.message }}</span>
                                 <span class="date-message">{{ message.date }}</span>
+                                <div class="dropdown">
+                                </div>
                             </div>
                         </section>
-
 
                         <!-- TEXTBAR CHAT -->
                         <section>
@@ -129,17 +117,13 @@
                                     placeholder="Scrivi un messaggio" type="text">
                             </div>
                         </section>
+                        
                     </div>
-
                 </div>
             </section>
-
         </div>
-
     </main>
-
     <!-- MY SCRIPT -->
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
-
 </html>
