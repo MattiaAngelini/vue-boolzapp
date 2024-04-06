@@ -5,6 +5,9 @@ createApp({
     return {
       userActive: 0,
       userMessageValue: '',
+      userSearchValue:'',
+      
+     
       contacts: [{
           name: 'Michele',
           avatar: '_1',
@@ -125,5 +128,29 @@ createApp({
         this.userMessageValue = '';
       }
     },
+
+
+    // Milestone 4
+// - Ricerca utenti: scrivendo qualcosa nell’input a sinistra, 
+// vengono visualizzati solo i contatti 
+// il cui nome contiene le lettere inserite
+// (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
+
+    //dopo aver creato keyup e collegato v-model alla input,
+    //creo una funzione per filtrare il valore inserito dall'user,
+    //il cui nome contiene le lettere inserite
+   
+    filterSearch(){
+      //for each per iterare tra tutti i nomi
+			this.contacts.forEach((contact) => {
+        
+        //creo variabile che contiene solo il nome iterato
+				filteredName = contact.name.toLowerCase();
+
+        //cambio valore di visible con includes (che restituisce true o false)
+				contact.visible = filteredName.includes(this.userSearchValue);
+			})
+		},
   }
 }).mount('#app');
