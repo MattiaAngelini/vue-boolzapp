@@ -11,14 +11,12 @@ body {
 }
 
 /******BACKGROUND WRAP******/
-
 .wrap-bar {
     background-color: #009688;
     height: 90px;
 }
 
 /******LAYOUT******/
-
 .main-chat {
     display: flex;
     justify-content: center;
@@ -44,13 +42,11 @@ body {
     display: flex;
     flex-direction: column;
     width: 70%;
-    background-image: url(/assets/img/mine.jpg);
+    background-image: url(../img/mine.jpg);
 }
 
 /*************LEFT COL - COL-30 ***************/
-
 /*** PERSONAL CONTACT - SOFIA ***/
-
 .my-contact {
     display: flex;
     justify-content: space-between;
@@ -105,7 +101,6 @@ body {
 }
 
 /*** ROW SEARCHBAR ***/
-
 .searchbar-wrap {
     background-color: #fafafa;
 }
@@ -163,7 +158,6 @@ body {
 }
 
 /*************RIGHT COL - COL-70 ***************/
-
 .col-70 > section:nth-child(1),
 .col-70 > section:nth-child(3) {
     display: flex;
@@ -180,7 +174,6 @@ body {
 }
 
 /***ROW TEXTBAR CHAT***/
-
 .textbar-container {
     width: 100%;
     display: flex;
@@ -205,7 +198,6 @@ body {
 }
 
 /***AREA CHAT**/
-
 .chat-area {    
     height: 100%;
     padding: 0 40px 0 40px;
@@ -224,7 +216,6 @@ body {
     position: relative;
 }
 
-
 .date-message {
     align-self: flex-end;
     color: grey;
@@ -233,7 +224,6 @@ body {
 }
 
 /**DINAMIC CLASS - MESSAGES**/
-
 .container-received {
     width: 200px;
     margin: 6px; 
@@ -250,5 +240,3 @@ body {
     align-self: flex-end;
     position: relative;
 }
-
-

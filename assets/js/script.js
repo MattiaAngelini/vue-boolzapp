@@ -96,6 +96,7 @@ createApp({
       this.userActive = index;
       console.log(this.userActive)
     },
+
     sendMessage() {
       // Aggiungiamo il messaggio solo se è stato digitato qualcosa, 
       // quindi diverso da nulla
@@ -112,7 +113,6 @@ createApp({
         this.contacts[this.userActive].messages.push(newMessage);
         
      
-
         // Dopo aver inviato messaggio, nella stessa funzione 3 secondi dopo,
         // faccio comparire messaggio di risposta con 'ok'
         setTimeout(() => {
@@ -135,7 +135,6 @@ createApp({
     //Dopo aver creato keyup e collegato v-model alla input,
     //creo una funzione per filtrare il valore inserito dall'user,
     //il cui nome contiene le lettere inserite
-   
     filterSearch(){
       //for each per iterare tra tutti i nomi
 			this.contacts.forEach((contact) => {  
