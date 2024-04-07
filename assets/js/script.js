@@ -1,4 +1,4 @@
-const dt = luxon.DateTime;
+
 const { createApp } = Vue;
 createApp({
   data() {
@@ -8,8 +8,7 @@ createApp({
       userMessageValue: '',
       userSearchValue:'',
       dropdownVisible: false,
-      hour: '',
-      
+     
       contacts: [{
           name: 'Michele',
           avatar: '_1',
@@ -111,25 +110,22 @@ createApp({
         };
         // Aggiungiamo il nuovo messaggio alla lista dei messaggi del contatto attivo
         this.contacts[this.userActive].messages.push(newMessage);
+        
      
 
         // Dopo aver inviato messaggio, nella stessa funzione 3 secondi dopo,
         // faccio comparire messaggio di risposta con 'ok'
-        // setTimeout(() => {
-        //   const replyMessage = {
-        //     date: new Date().toLocaleString(),
-        //     message: 'ok',
-        //     status: 'received'
-        //   };
-        //   // Aggiungiamo risposta alla lista dei messaggi del contatto attivo.
-        //   this.contacts[this.userActive].messages.push(replyMessage);
-        //   // Invocazone funzione con orario corrente dopo ultimo messaggio inserito.
-         
-          
-
-        //   // 3 secondi di intervallo
-        // }, 3000);
-
+        setTimeout(() => {
+          const replyMessage = {
+            date: new Date().toLocaleString(),
+            message: 'ok',
+            status: 'received'
+          };
+          // Aggiungiamo risposta alla lista dei messaggi del contatto attivo.
+          this.contacts[this.userActive].messages.push(replyMessage);
+  
+          // 3 secondi di intervallo
+        }, 3000);
         // Reset della barra di input dopo l'invio del messaggio
         this.userMessageValue = '';
       
@@ -150,31 +146,13 @@ createApp({
 			})      
 		},
    
-
-    // Milestone 5
-    // - Cancella messaggio: cliccando sul messaggio 
-    // appare un menu a tendina che permette di cancellare il messaggio selezionato
-    
-    // - Visualizzazione ora e ultimo messaggio inviato/ricevuto 
-    // nella lista dei contatti
-    
-
     //per la funzione cancella msg,elimino messaggio pushato da funzione precedente,
     //passando come argomento l'indice alla funzione attivabile al click 
     deleteMessage(messageIndex){
       this.contacts[this.userActive].messages.splice(messageIndex,1)
     },
 
-    //funzione con orario corrente
-    currentHour(index) {
-      const lastMessage = this.contacts[this.userActive].messages.slice(-1)[0]; // Ottieni l'ultimo messaggio
-      if (lastMessage) {
-        return lastMessage.date; // Restituisci l'orario dell'ultimo messaggio
-      }
-      return ''; // Se non ci sono messaggi, restituisci una stringa vuota
-    }
-    
- 
+
   },
 
 
