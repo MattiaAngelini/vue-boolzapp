@@ -39,19 +39,19 @@ body {
     width: 50%;
 }
 
-.col-40 {
-    max-width: 40%;
+.col-30 {
+    width: 30%;
     background-color: white;
 }
 
-.col-60 {
+.col-70 {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
     background-image: url(/assets/img/mine.jpg);
 }
 
-/*************LEFT COL - COL-40 ***************/
+/*************LEFT COL - COL-30 ***************/
 
 /*** PERSONAL CONTACT - SOFIA ***/
 .my-contact {
@@ -142,36 +142,32 @@ body {
 .container-contacts {
     background-color: white;
     overflow-y: auto;
-    height: calc(100% - 180px)
+    height: calc(100% - 180px);    
 }
 
-.section-contacts figure {
-    display: flex;
-    border-radius: 100%;
-    font-size: 22px;
+.contact-name {
+    width: 100%;
+    overflow-wrap: break-word;
 }
 
 .section-contacts img {
     width: 60px;
-    border-radius: 100%;
-}
-
-.section-contacts h5 {
-    padding: 10px;
-}
-
-.contact-card {
-    display: flex;
+    border-radius: 100%; 
 }
 
 .selected {
     background-color: #e9ebeb;
 }
 
-/*************RIGHT COL - COL-60 ***************/
+.ms-clock {
+    font-size: 10px;
+    padding: 20px;  
+}
 
-.col-60 > section:nth-child(1),
-.col-60 > section:nth-child(3) {
+/*************RIGHT COL - COL-70 ***************/
+
+.col-70 > section:nth-child(1),
+.col-70 > section:nth-child(3) {
     display: flex;
     background-color: #eaeaea;
     height: 60px;
@@ -181,15 +177,9 @@ body {
     top: 0;
 }
 
-.col-60 > section:nth-child(3) {
-    display: flex;
-}
-
 .last-access {
     color: #918c8c;
 }
-
-/***WRAP CHAT***/
 
 /***ROW TEXTBAR CHAT***/
 
@@ -229,11 +219,13 @@ body {
 
 .message {
     display: flex;
+    overflow-wrap: break-word;
     flex-direction: column;
     border-radius: 6px;
     padding: 10px;
     position: relative;
 }
+
 
 .date-message {
     align-self: flex-end;
@@ -243,6 +235,7 @@ body {
 }
 
 /**DINAMIC CLASS - MESSAGES**/
+
 .container-received {
     width: 200px;
     margin: 6px; 

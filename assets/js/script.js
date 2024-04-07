@@ -115,20 +115,20 @@ createApp({
 
         // Dopo aver inviato messaggio, nella stessa funzione 3 secondi dopo,
         // faccio comparire messaggio di risposta con 'ok'
-        setTimeout(() => {
-          const replyMessage = {
-            date: new Date().toLocaleString(),
-            message: 'ok',
-            status: 'received'
-          };
-          // Aggiungiamo risposta alla lista dei messaggi del contatto attivo.
-          this.contacts[this.userActive].messages.push(replyMessage);
-          // Invocazone funzione con orario corrente dopo ultimo messaggio inserito.
+        // setTimeout(() => {
+        //   const replyMessage = {
+        //     date: new Date().toLocaleString(),
+        //     message: 'ok',
+        //     status: 'received'
+        //   };
+        //   // Aggiungiamo risposta alla lista dei messaggi del contatto attivo.
+        //   this.contacts[this.userActive].messages.push(replyMessage);
+        //   // Invocazone funzione con orario corrente dopo ultimo messaggio inserito.
          
           
 
-          // 3 secondi di intervallo
-        }, 3000);
+        //   // 3 secondi di intervallo
+        // }, 3000);
 
         // Reset della barra di input dopo l'invio del messaggio
         this.userMessageValue = '';

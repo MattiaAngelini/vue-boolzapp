@@ -26,12 +26,12 @@
                 <div class="container">
                    
                     <!-------------- LEFT COL - CONTACTS GROUP ------------->
-                    <div class="col-40">
+                    <div class="col-30">
                         <!-- MY CONTACT -->
                         <div class="my-contact">
                             <span class="user-img-container">
                                 <img class="user-img" src="./assets/img/avatar_io.jpg" alt="">
-                                <div>Sofia</div>
+                                <b>Sofia</b>
                             </span>
                             <div>
                                 <i class="fa-solid fa-circle-notch"></i>
@@ -41,15 +41,16 @@
                         </div>
                        
                         <!-- NOTIFICATIONS -->
-                        <div class="notifications">
+                        <section class="notifications">                        
                             <span>
                                 <i class="fa-solid fa-bell-slash"></i>
                             </span>
+                           
                             <div>
-                                <p>Ricevi notifiche di nuovi messaggi</p>
-                                <p>Attiva notifiche desktop</p>
+                                <div>Ricevi notifiche di nuovi messaggi</div>
+                                <p>Attiva notifiche desktop</p>              
                             </div>
-                        </div>
+                        </section>
                        
                         <!-- SEARCHBAR CHAT -->
                         <div class="searchbar-wrap">
@@ -70,16 +71,16 @@
                                 <section @click="accountActive(index)" class="section-contacts" :class="{ 'selected': index === userActive }">
                                     <div v-if="contact.visible" class="contact-card">
                                         
-                                        <figure>
-                                            <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt="">
-                                       
-                                        </figure>
+                                        <div class="d-flex justify-content-between p-1">
+                                            <div>
+                                                <img  :src="'assets/img/avatar' + contact.avatar + '.jpg'" alt=""> 
+                                                <b class="p-2">{{contact.name}}</b>
+                                            </div>
+                                            <span class="d-flex ms-clock">{{ currentHour(index) }}</span>            
+                                        </div>
                                        
                                         <div class="contact-name">
-                                            <span>{{contact.name}}</span>
-                                            <span>{{ currentHour(index) }}</span>
-                                            <div>{{ contact.messages[contact.messages.length - 1].message }}</div>
-                                            
+                                            <div class="p-2">{{ contact.messages[contact.messages.length - 1].message }}</div>
                                         </div>
 
                                     </div>
@@ -90,7 +91,7 @@
                     
                     
                     <!---------------- RIGHT COL - CHAT --------------->
-                    <div class="col-60">
+                    <div class="col-70">
                         <!-- ACTIVE CONTACT ON CHAT -->
                         <section>
                             <div>
@@ -98,7 +99,7 @@
                                     alt="">
                             </div>
                             <div>
-                                <span>{{ contacts[userActive].name }}</span>
+                                <b>{{ contacts[userActive].name }}</b>
                                 <div class="last-access">ultimo accesso oggi alle 12:00</div>
                             </div>
                         </section>
@@ -108,7 +109,8 @@
 
                             <div class="message" v-for="(message, index) in contacts[userActive].messages"
                                 :class="{ 'container-sent': message.status === 'sent', 'container-received': message.status === 'received' }" >
-                                <span>{{ message.message }}</span>
+                               
+                                <span>{{ message.message }} </span>
                                                      
                                <div class="d-flex justify-content-end ">
                                     <span class="date-message">{{ message.date }}</span>
