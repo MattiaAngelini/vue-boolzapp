@@ -1,6 +1,4 @@
 const dt = luxon.DateTime;
-const currentHour = dt.now().toLocaleString(dt.DATETIME_SHORT);  
-
 const { createApp } = Vue;
 createApp({
   data() {
@@ -10,7 +8,7 @@ createApp({
       userMessageValue: '',
       userSearchValue:'',
       dropdownVisible: false,
-      hour: currentHour,
+      hour: '',
       
       contacts: [{
           name: 'Michele',
@@ -113,6 +111,7 @@ createApp({
         };
         // Aggiungiamo il nuovo messaggio alla lista dei messaggi del contatto attivo
         this.contacts[this.userActive].messages.push(newMessage);
+        this.currentHour(this.hour);
 
         // Dopo aver inviato messaggio, nella stessa funzione 3 secondi dopo,
         // faccio comparire messaggio di risposta con 'ok'
@@ -122,14 +121,20 @@ createApp({
             message: 'ok',
             status: 'received'
           };
-          // Aggiungiamo risposta alla lista dei messaggi del contatto attivo
+          // Aggiungiamo risposta alla lista dei messaggi del contatto attivo.
           this.contacts[this.userActive].messages.push(replyMessage);
+          // Invocazone funzione con orario corrente dopo ultimo messaggio inserito.
+          this.currentHour(this.hour);
+
+
+         
 
           // 3 secondi di intervallo
         }, 3000);
 
         // Reset della barra di input dopo l'invio del messaggio
         this.userMessageValue = '';
+      
       }
     },
 
@@ -154,11 +159,23 @@ createApp({
     
     // - Visualizzazione ora e ultimo messaggio inviato/ricevuto 
     // nella lista dei contatti
+    
 
+    //per la funzione cancella msg,elimino messaggio pushato da funzione precedente,
+    //passando come argomento l'indice alla funzione attivabile al click 
     deleteMessage(messageIndex){
       this.contacts[this.userActive].messages.splice(messageIndex,1)
     },
 
-    
-  }
+    //funzione con orarrio corrente
+    currentHour(){
+      let hour = dt.now().toLocaleString(dt.DATETIME_SHORT);  
+      console.log(hour);
+    }
+ 
+  },
+  
+
 }).mount('#app');
+
+
