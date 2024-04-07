@@ -111,7 +111,7 @@ createApp({
         };
         // Aggiungiamo il nuovo messaggio alla lista dei messaggi del contatto attivo
         this.contacts[this.userActive].messages.push(newMessage);
-        this.currentHour(this.hour);
+     
 
         // Dopo aver inviato messaggio, nella stessa funzione 3 secondi dopo,
         // faccio comparire messaggio di risposta con 'ok'
@@ -124,10 +124,8 @@ createApp({
           // Aggiungiamo risposta alla lista dei messaggi del contatto attivo.
           this.contacts[this.userActive].messages.push(replyMessage);
           // Invocazone funzione con orario corrente dopo ultimo messaggio inserito.
-          this.currentHour(this.hour);
-
-
          
+          
 
           // 3 secondi di intervallo
         }, 3000);
@@ -167,14 +165,18 @@ createApp({
       this.contacts[this.userActive].messages.splice(messageIndex,1)
     },
 
-    //funzione con orarrio corrente
-    currentHour(){
-      let hour = dt.now().toLocaleString(dt.DATETIME_SHORT);  
-      console.log(hour);
+    //funzione con orario corrente
+    currentHour(index) {
+      const lastMessage = this.contacts[this.userActive].messages.slice(-1)[0]; // Ottieni l'ultimo messaggio
+      if (lastMessage) {
+        return lastMessage.date; // Restituisci l'orario dell'ultimo messaggio
+      }
+      return ''; // Se non ci sono messaggi, restituisci una stringa vuota
     }
+    
  
   },
-  
+
 
 }).mount('#app');
 
